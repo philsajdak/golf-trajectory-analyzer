@@ -2,8 +2,6 @@
 
 **golf-trajectory-analyzer** is an interactive analytics tool designed to study the physics of a golf simulator. This tool is specifically designed for use with the Project64 emulator playing Mario Golf 64, and it enables users to capture real-time shot data and visualize it on a detailed map.
 
-Please note that this repo will only contain the scripts used, and not the web platform itself. Please contact me privately.
-
 ## Features
 
 - **Real-time Data Capture:** Automatically captures shot data from the Project64 emulator during gameplay.
