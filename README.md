@@ -49,4 +49,4 @@ node server.js
 
 ## Usage
 
-Once you've started the server and opened the web application, open up Project64 and load the script. Configure the script file so that the IP address points to your server. The tool will capture and display shot data in real-time.
+Once you've started the server and opened the web application, open up Project64, start the ROM and load the script. Configure the script file so that the IP address points to your server. The tool will capture and display shot data in real-time.
