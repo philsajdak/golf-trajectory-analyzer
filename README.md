@@ -24,23 +24,29 @@ These instructions will help you get a copy of the project up and running on you
 ### Installation
 
 # Navigate to the project directory
-` cd golfsim-data-visualizer
+```
+cd golfsim-data-visualizer
+```
 
 # Install dependencies
-` npm install
+```
+npm install
+```
 
 # Set up your Firebase configuration in firebase-config.js
-` const firebaseConfig = {
+```
+const firebaseConfig = {
   // Your Firebase configuration details
 };
+```
 
 # Start the server
-` node server.js
+```
+node server.js
+```
 
 # Open index.html in your browser to access the application.
 
 ## Usage
 
-Once you've started the server and opened the web application, open up Project64 and load the script. Edit the script file so that the IP address points to your server. The tool will capture and display shot data in real-time.
-
-
+Once you've started the server and opened the web application, open up Project64 and load the script. Configure the script file so that the IP address points to your server. The tool will capture and display shot data in real-time.
