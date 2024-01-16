@@ -7,7 +7,7 @@
 
 ## Features
 
-- **Real-time Data Capture:** Automatically extracts shot data from the ROM's RDRAM during gameplay.
+- **Real-time Data Capture:** Automatically extracts shot data from the emulator's RDRAM during gameplay.
 - **Shot Visualization:** Displays the ball's trajectory on an interactive map of the golf course.
 - **TCP Integration:** Utilizes TCP communication with Project64 to ensure seamless data transmission.
 
