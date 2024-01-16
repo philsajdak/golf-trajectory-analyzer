@@ -15,37 +15,37 @@
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
 - Project64 Development Client
 - Node.js
 - Firebase account
 
-### Installation
+## Installation
 
-# Navigate to the project directory
+Navigate to the project directory
 ```
 cd golfsim-data-visualizer
 ```
 
-# Install dependencies
+Install dependencies
 ```
 npm install
 ```
 
-# Set up your Firebase configuration in firebase-config.js
+Set up your Firebase configuration in firebase-config.js
 ```
 const firebaseConfig = {
   // Your Firebase configuration details
 };
 ```
 
-# Start the server
+Start the server
 ```
 node server.js
 ```
 
-# Open index.html in your browser to access the application.
+Open index.html in your browser to access the application.
 
 ## Usage
 
