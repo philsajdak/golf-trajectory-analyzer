@@ -15,7 +15,6 @@ const server = net.createServer((socket) => {
 
     socket.on('data', (data) => {
         try {
-            // Assuming the data is in JSON format
             const parsedData = JSON.parse(data.toString());
             const db = admin.database();
             const ref = db.ref('gameData');
