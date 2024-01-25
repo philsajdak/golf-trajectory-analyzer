@@ -1,3 +1,4 @@
+/*NOTE: Please change the IP addresses in this file to your server's IP address.*/
 const net = require('net');
 const admin = require('firebase-admin');
 const serviceAccount = require('./key.json');
@@ -5,7 +6,7 @@ const serviceAccount = require('./key.json');
 // Initialize Firebase
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: '127.0.0.1' // Your firebase here
+    databaseURL: '127.0.0.1'
 });
 
 const server = net.createServer((socket) => {
@@ -35,4 +36,4 @@ const server = net.createServer((socket) => {
 
 });
 
-server.listen(3000, '127.0.0.1'); // Your server's IP here
+server.listen(3000, '127.0.0.1');

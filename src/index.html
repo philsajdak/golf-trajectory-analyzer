@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <head>
-    <title>Game Data Display</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Firebase App and Database scripts -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="firebase-config.js"></script>
-    <script src="main.js" defer></script>
+   <title>Game Data Display</title>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="/img/fav-icon.png">
+   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+   <script src="firebase-config.js"></script>
+   <script type="module" src="main.js"></script>
 </head>
-<body onload="fetchShotValues()">
-    <!-- Navigation Menu -->
-    <nav class="navigation-menu">
-        <h1 class="menu-title">Golf Analysis Tool</h1>
-        <ul class="menu-items">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <div id="data-container"></div>
-
-    <!-- Modal for map display -->
-    <div id="map-modal" onclick="hideMapPosition()">
-        <div id="map-container" onclick="event.stopPropagation();">
-            <svg id="map-svg" style="position: absolute; top: 0; left: 0;" width="256" height="512">
-            </svg>
-            <img src="img/hole7.png" alt="Course" class="course-image">
-            <div id="ball-marker"></div>
-            <div id="pin-marker"></div>
-            <div id="distance-display-container">
-                <span id="distance-display"></span>
-            </div>
-            <button id="close-map" onclick="hideMapPosition()">Close</button>
-        </div>
-    </div>
+<body>
+   <nav class="navigation-menu">
+      <h1 class="menu-title">Golf Physics Analysis Tool</h1>
+      <ul class="menu-items">
+         <li>
+            <a href="https://github.com/philsajdak/golf-trajectory-analyzer">
+            <img src="img/github.png" alt="Github Repo">
+            </a>
+         </li>
+      </ul>
+   </nav>
+   <div id="data-container"></div>
+   <div id="map-modal">
+      <div id="map-container" onclick="event.stopPropagation();">
+         <svg id="map-svg" style="position: absolute; top: 0; left: 0;" width="256" height="512"></svg>
+         <img src="img/placeholder.png" alt="Course" class="course-image">
+         <div id="ball-marker"></div>
+         <div id="expected-marker"></div>
+         <div id="grid-marker"></div>
+         <div id="pin-marker"></div>
+         <div id="landing-marker"></div>
+         <div id="tooltip" style="display: none; position: absolute; pointer-events: none; z-index: 1000;"></div>
+         <div id="compass">
+            <div id="compass-arrow"></div>
+            <div id="wind-speed-display"></div>
+         </div>
+         <div id="distance-display-container">
+            <span id="distance-display"></span>
+         </div>
+         <button id="close-map">Close</button>
+         <div id="color-key-trigger">
+            <img src="img/color-key.png" alt="Key Icon" id="color-key-icon" />
+         </div>
+         <div id="color-key" class="hidden">
+            <ul>
+               <li>
+                  <span class="key-square" style="background-color: white;"></span>
+                  <span class="inner">White Line:&nbsp;</span> Shortest Path to Pin
+               </li>
+               <li>
+                  <span class="key-square" style="background-color: blue;"></span>
+                  <span class="inner">Blue Line:&nbsp;</span>Shot Path Trajectory
+               </li>
+               <li>
+                  <span class="key-square" style="background-color: yellow;"></span>
+                  <span class="inner">Yellow Circles:&nbsp;</span>Calculations
+               </li>
+               <li>
+                  <span class="key-square" style="background-color: black;"></span>
+                  <span class="inner">Black Circle:&nbsp;</span>Actual Ball Landing Position
+               </li>
+               <li>
+                  <span class="key-square" style="background-color: red;"></span>
+                  <span class="inner">Red Circle:&nbsp;</span>Ball Starting Position
+               </li>
+               <li>
+                  <span class="key-square" style="background-color: blue;"></span>
+                  <span class="inner">Blue Circle:&nbsp;</span>Pin Position
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
 </body>
 </html>
