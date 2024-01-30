@@ -7,7 +7,6 @@ export const COURSES = {
     "Mario's Star": 5
 };
 
-// In constants.js
 export const uiElements = {
   mapModal: document.getElementById('map-modal'),
   closeButton: document.getElementById('close-map'),
@@ -17,7 +16,6 @@ export const uiElements = {
   distanceDisplay: document.getElementById('distance-display'),
   dataContainer: document.getElementById('data-container'),
   tooltip: document.getElementById('tooltip'),
-  // Add other UI elements as needed
 };
 
 export const gameSettings = {
