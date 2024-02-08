@@ -28,11 +28,6 @@ Navigate to the project directory
 cd golf-trajectory-analyzer
 ```
 
-Install dependencies
-```
-npm install
-```
-
 Set up your Firebase configuration in firebase-config.js
 ```
 const firebaseConfig = {
